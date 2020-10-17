@@ -3,7 +3,10 @@
 
 
 //add date and time to the top of the page THIS CODE DOES NOT WORK
-$("#currentDay").text.moment().format('MMMM Do YYYY, h:mm:ss a');
+var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+$("#currentDay").text(time);
+
+//$("#currentDay").text.moment().format('MMMM Do YYYY, h:mm:ss a');
 
 
 //on click save to local storage THIS CODE ALSO DOES NOT WORK
@@ -14,7 +17,7 @@ $(".saveBtn").on("click", function () {
     console.log(task)
 });
 
-//pull content from local storage
+//pull content from local storage I CAN'T TEST THIS BECAUSE EVRYTHING ELSE IS BROKEN
 
 $("#hour9").val(localStorage.getItem("hour9"));
 $("#hour10").val(localStorage.getItem("hour10"));
@@ -33,3 +36,5 @@ $("#hour7").val(localStorage.getItem("hour7"));
 
 
 //3 if else statemenmts for past present and future and change the color
+// I CAN'T EVEN BEGIN TO WRITE THIS BECAUSE EVERYTHING ELSE IS BROKEN
+
