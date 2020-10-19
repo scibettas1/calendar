@@ -1,27 +1,16 @@
 //add date and time to the top of the page
 setInterval(function () {
-    var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-    $("#currentDay").text(time);
-
-    //console.log(time)
+    var date = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $("#currentDay").text(date);
 }, 1000);
-
-// var hour9El = $("#hour9")
-// console.log(hour9El)
-// var elementHour = hour9El.data("hour")
-// console.log(elementHour)
 
 //on click save to local storage
 
 $(".saveBtn").on("click", function () {
     var task = $(this).siblings(".description").val();
-    console.log(task)
-
     var time = $(this).parent().attr("id");
-
     // saving to local storage
     localStorage.setItem(time, task);
-    
 });
 
 //pull content from local storage 
@@ -29,56 +18,37 @@ $(".saveBtn").on("click", function () {
 
 $("#9 .description").val(localStorage.getItem("9"));
 $("#10 .description").val(localStorage.getItem("10"));
-$("#hour11").val(localStorage.getItem("hour11"));
-$("#hou12").val(localStorage.getItem("hour12"));
-$("#hour1").val(localStorage.getItem("hour1"));
-$("#hour2").val(localStorage.getItem("hour2"));
-$("#hour3").val(localStorage.getItem("hour3"));
-$("#hour4").val(localStorage.getItem("hour4"));
-$("#hour5").val(localStorage.getItem("hour5"));
-$("#hour6").val(localStorage.getItem("hour6"));
-$("#hour7").val(localStorage.getItem("hour7"));
-
-//3 if else statemenmts for past present and future and change the color
-// I don't know where to begin with this
-
-//if the value of the div is equal to h it should be a white
-
-//how do i check if the value of something is less than or greater than in refrence to time?
-//AM and PM throws a wrench in the whole thing
-
-
+$("#11 .description").val(localStorage.getItem("11"));
+$("#12 .description").val(localStorage.getItem("12"));
+$("#13 .description").val(localStorage.getItem("13"));
+$("#14 .description").val(localStorage.getItem("14"));
+$("#15 .description").val(localStorage.getItem("15"));
+$("#16 .description").val(localStorage.getItem("16"));
+$("#17 .description").val(localStorage.getItem("17"));
+$("#18 .description").val(localStorage.getItem("18"));
+$("#19 .description").val(localStorage.getItem("19"));
 
 //hourUpdater function
-function hourUpdater(){
-// get current number of hourse
-var currentHour = moment().format('H');
+function hourUpdater() {
+    // get current hour
+    var currentHour = moment().format('H');
+    console.log(currentHour)
 
     // loop over the time blocks .each
-$(".time-block").each(function(){
-var blockHour = parseInt($(this).attr("id"));
+    $(".time-block").each(function () {
+        var blockHour = parseInt($(this).attr("id"));
 
-if (blockHour < currentHour){
-    $(this).addClass("past")
-} else if (blockHour === currentHour){
-    $(this).removeClass("past")
-    $(this).addClass("present")
-} else {
-    $(this).removeClass("past")
-    $(this).removeClass("present")
-    $(this).addClass("future")
+        if (blockHour < currentHour) {
+            $(this).addClass("past")
+        } else if (blockHour === currentHour) {
+            $(this).removeClass("past")
+            $(this).addClass("present")
+        } else {
+            $(this).removeClass("past")
+            $(this).removeClass("present")
+            $(this).addClass("future")
+        }
+    });
+
 }
-});
-
 hourUpdater();
-
-
-    // set variable for time block to pasteInt
-
-    // check to see if we have moved past the current time
-
-    // else if at current time
-
-    // else if not this time
-}
-    
