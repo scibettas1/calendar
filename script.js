@@ -3,8 +3,10 @@
 
 
 //add date and time to the top of the page THIS CODE DOES NOT WORK
-var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+var time = moment().format('MMMM Do YYYY, h:mm a');
 $("#currentDay").text(time);
+
+console.log(time)
 
 //$("#currentDay").text.moment().format('MMMM Do YYYY, h:mm:ss a');
 
