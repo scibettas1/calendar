@@ -40,7 +40,7 @@ function hourUpdater() {
 
         if (blockHour < currentHour) {
             $(this).addClass("past")
-        } else if (blockHour === currentHour) {
+        } else if (blockHour == currentHour) {
             $(this).removeClass("past")
             $(this).addClass("present")
         } else {
